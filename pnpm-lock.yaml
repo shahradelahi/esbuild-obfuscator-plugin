@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       javascript-obfuscator:
-        specifier: ^4.1.1
+        specifier: ^4
         version: 4.1.1
       micromatch:
-        specifier: ^4.0.8
+        specifier: ^4
         version: 4.0.8
     devDependencies:
       '@ianvs/prettier-plugin-sort-imports':
@@ -26,7 +26,7 @@ importers:
         version: 4.0.9
       '@types/node':
         specifier: ^22.7.5
-        version: 22.7.5
+        version: 22.9.0
       esbuild:
         specifier: ^0.24.0
         version: 0.24.0
@@ -544,8 +544,8 @@ packages:
   '@types/minimatch@3.0.5':
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
 
-  '@types/node@22.7.5':
-    resolution: {integrity: sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==}
+  '@types/node@22.9.0':
+    resolution: {integrity: sha512-vuyHg81vvWA1Z1ELfvLko2c8f34gyA0zaic0+Rllc5lbCnbSyuvb2Oxpm6TAUAC/2xZN3QGqxBNggD1nNR2AfQ==}
 
   '@types/validator@13.12.2':
     resolution: {integrity: sha512-6SlHBzUW8Jhf3liqrGGXyTJSIFe4nqlJ5A5KaMZ2l/vbM3Wh3KSybots/wfWVzNLK4D1NZluDlSQIbIEPx6oyA==}
@@ -1714,7 +1714,7 @@ snapshots:
 
   '@types/minimatch@3.0.5': {}
 
-  '@types/node@22.7.5':
+  '@types/node@22.9.0':
     dependencies:
       undici-types: 6.19.8
 
