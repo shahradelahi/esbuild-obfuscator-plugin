@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       javascript-obfuscator:
-        specifier: ^4.1.1
+        specifier: ^4
         version: 4.1.1
       micromatch:
-        specifier: ^4.0.8
+        specifier: ^4
         version: 4.0.8
     devDependencies:
       '@ianvs/prettier-plugin-sort-imports':
