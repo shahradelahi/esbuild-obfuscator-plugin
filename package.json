@@ -18,7 +18,7 @@
   "files": [
     "dist/**/*"
   ],
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@9.13.2",
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
