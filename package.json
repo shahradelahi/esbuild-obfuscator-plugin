@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
-    "@sindresorhus/tsconfig": "^6.0.0",
+    "@sindresorhus/tsconfig": "^7.0.0",
     "@types/micromatch": "^4.0.9",
     "@types/node": "^22.7.5",
     "esbuild": "^0.24.0",
