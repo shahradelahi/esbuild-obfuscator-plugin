@@ -44,6 +44,7 @@
     "test": "vitest --run",
     "typecheck": "tsc --noEmit"
   },
+  "prettier": "@shahrad/prettier-config",
   "dependencies": {
     "javascript-obfuscator": "^4.1.1",
     "micromatch": "^4.0.8"
