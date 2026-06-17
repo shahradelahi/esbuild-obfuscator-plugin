@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    if: github.repository == 'shahradelahi/zod-request'
+    if: github.repository == 'shahradelahi/esbuild-obfuscator-plugin'
     name: Build & Publish Release
     runs-on: ubuntu-latest
     permissions:
