@@ -1,16 +1,11 @@
 import { promises } from 'node:fs';
 import { transform, type Loader, type Plugin } from 'esbuild';
-import JavaScriptObfuscator, { type ObfuscatorOptions } from 'javascript-obfuscator';
+import JavaScriptObfuscator from 'javascript-obfuscator';
 import MicroMatch from 'micromatch';
 
-export interface ObfuscatorPluginOptions extends ObfuscatorOptions {
-  /** Whether to obfuscate output files. Defaults to `false`. */
-  obfuscateOutput?: boolean;
-  /** A glob pattern or function that returns a boolean indicating whether the file should be obfuscated. Default behavior is to obfuscate all files. */
-  filter?: ((path: string) => boolean) | string[];
-  /** Inject additional code into file when obfuscating. */
-  inject?: { [path: string]: string[] | string };
-}
+import { type ObfuscatorPluginOptions } from './typings.js';
+
+export type { ObfuscatorPluginOptions } from './typings.js';
 
 export default function ObfuscatorPlugin(options: ObfuscatorPluginOptions): Plugin {
   const { obfuscateOutput = false, filter = [], ...obfuscateOptions } = options;

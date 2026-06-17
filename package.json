@@ -1,43 +1,71 @@
 {
   "name": "esbuild-obfuscator-plugin",
-  "version": "0.0.0",
+  "version": "0.0.5",
   "description": "JavaScript obfuscator plugin for esbuild",
-  "author": "Shahrad Elahi <shahrad@litehex.com> (https://github.com/shahradelahi)",
-  "license": "MIT",
-  "repository": "github:shahradelahi/esbuild-obfuscator-plugin",
-  "homepage": "https://github.com/shahradelahi/esbuild-obfuscator-plugin",
   "keywords": [
     "esbuild",
     "javascript",
     "obfuscator",
     "obfuscator-plugin"
   ],
+  "homepage": "https://github.com/shahradelahi/esbuild-obfuscator-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/shahradelahi/esbuild-obfuscator-plugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shahradelahi/esbuild-obfuscator-plugin.git"
+  },
+  "license": "MIT",
+  "author": "Shahrad Elahi <shahrad@litehex.com> (https://github.com/shahradelahi)",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "./dist",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist/**/*"
+    "dist/**",
+    "!dist/**/*.d.cts"
   ],
-  "packageManager": "pnpm@9.7.0",
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc --noEmit",
-    "format:check": "prettier --check .",
+    "ci:publish": "changeset publish",
+    "clean": "git clean -dfx node_modules dist .tsbuildinfo",
     "format": "prettier --write .",
-    "prepublishOnly": "pnpm typecheck && pnpm format:check && pnpm build"
-  },
-  "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
-    "@sindresorhus/tsconfig": "^6.0.0",
-    "@types/micromatch": "^4.0.9",
-    "@types/node": "^22.7.5",
-    "esbuild": "^0.24.0",
-    "prettier": "^3.3.3",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.3"
+    "format:check": "prettier --check .",
+    "lint": "pnpm typecheck & eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepublishOnly": "pnpm build && pnpm test && pnpm format:check && pnpm lint",
+    "test": "vitest --run",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "javascript-obfuscator": "^4",
-    "micromatch": "^4"
+    "javascript-obfuscator": "^4.1.1",
+    "micromatch": "^4.0.8"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.0",
+    "@shahrad/eslint-config": "^1.1.0",
+    "@shahrad/prettier-config": "^1.2.2",
+    "@shahrad/tsconfig": "^1.3.0",
+    "@types/micromatch": "^4.0.10",
+    "@types/node": "^25.9.3",
+    "esbuild": "^0.28.0",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.4",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  },
+  "packageManager": "pnpm@10.34.3+sha512.f2c531b08829d7be7f03c90addc266615f9c5477463e4bf1d275cb263ce9ea57cf0d5599110d94649a9bb3fed9f0b5efcea74a7016b61532a24cb9ad87860c1d",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
