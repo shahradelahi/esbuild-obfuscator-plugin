@@ -1,9 +1,6 @@
 .DS_Store
 node_modules
 /build
-dist
-dev
-tests/output
 /.svelte-kit
 /package
 .env
@@ -12,6 +9,15 @@ tests/output
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
-/.changeset
 package-lock.json
 yarn.lock
+.changeset/
+.prettierrc
+.vercel
+.contentlayer
+dist
+
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+.gitignore
+.idea/
