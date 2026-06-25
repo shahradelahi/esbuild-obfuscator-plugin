@@ -1,5 +1,11 @@
 # esbuild-obfuscator-plugin
 
+## 1.0.1
+
+### Patch Changes
+
+- 316d693: Replace `micromatch` dependency with `@se-oss/glob` and improve path normalization for glob pattern matching.
+
 ## 1.0.0
 
 ### Major Changes
