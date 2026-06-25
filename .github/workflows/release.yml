@@ -16,17 +16,17 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Use PNPM
         uses: pnpm/action-setup@v6
 
-      - name: Use Node v24
-        uses: actions/setup-node@v4
+      - name: Use Node v26
+        uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
           cache: pnpm
 
       - name: Install dependencies
