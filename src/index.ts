@@ -1,11 +1,12 @@
 import { promises } from 'node:fs';
+import { isAbsolute, relative } from 'node:path';
+import { isMatch as globIsMatch } from '@se-oss/glob';
 import { transform, type Loader, type Plugin } from 'esbuild';
 import JavaScriptObfuscator from 'javascript-obfuscator';
-import MicroMatch from 'micromatch';
 
-import { type ObfuscatorPluginOptions } from './typings.js';
+import type { ObfuscatorPluginOptions } from './typings';
 
-export type { ObfuscatorPluginOptions } from './typings.js';
+export type * from './typings';
 
 export default function ObfuscatorPlugin(options: ObfuscatorPluginOptions): Plugin {
   const { obfuscateOutput = false, filter = [], ...obfuscateOptions } = options;
@@ -92,5 +93,6 @@ export default function ObfuscatorPlugin(options: ObfuscatorPluginOptions): Plug
 }
 
 function isMatch(path: string, pattern: string | string[]) {
-  return MicroMatch.isMatch(path, pattern, { basename: true });
+  const normalizedPath = isAbsolute(path) ? relative(process.cwd(), path) : path;
+  return globIsMatch(normalizedPath, pattern, { basename: true });
 }
