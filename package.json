@@ -60,7 +60,7 @@
     "globals": "^17.7.0",
     "prettier": "^3.8.4",
     "tsup": "^8.5.1",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.0",
     "vitest": "^4.1.9"
   },
   "peerDependencies": {
